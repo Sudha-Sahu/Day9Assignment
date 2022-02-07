@@ -1,4 +1,5 @@
 package com.Bridgelabz.Day9Assignment;
+import java.util.Scanner;
 
 public class AddressBook{
 	private String firstName;
@@ -12,16 +13,28 @@ public class AddressBook{
 
 		System.out.println("Welcome to Address Book program in AddressBook Main class!!!!");
 	}
-	private AddressBook(String firstName, String lastName, String city, String state, String zip, String phoneNumber, String gmail) {
-		this.firstName=firstName;
-		this.lastName=lastName;
-		this.city=city;
-		this.state=state;
-		this.zip=zip;
-		this.phoneNumber=phoneNumber;
-		this.gmail=gmail;
+	public void getDetails() {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the First name of user Contact : ");
+		this.firstName= sc.nextLine();
+		System.out.println("Enter the Last name of user Contact : ");
+		this.lastName= sc.nextLine();
+		System.out.println("Enter the City of user Contact : ");
+		this.city= sc.nextLine();
+		System.out.println("Enter the State of user Contact : ");
+		this.state= sc.nextLine();
+		System.out.println("Enter the ZipCode of user Contact : ");
+		this.zip= sc.nextLine();
+		System.out.println("Enter the Phone Number of user Contact : ");
+		this.phoneNumber= sc.nextLine();
+		System.out.println("Enter the Gmail of user Contact : ");
+		this.gmail= sc.nextLine();
+
 	}
 	public void displayAddress() {
+
+		System.out.println("Details of User Contact ");
 		System.out.println("First Name :"+firstName);
 		System.out.println("Last Name :"+lastName);
 		System.out.println("City :"+city);
@@ -33,7 +46,7 @@ public class AddressBook{
 	public static void main(String[] args) {
 
 		AddressBook address = new AddressBook();
-		address = new AddressBook("Samuel", "Shah", "Mumbai", "Maharastra", "490025", "9856321235", "samuelshah123@gmail.com");
+		address.getDetails();
 		address.displayAddress();
 	}
 }
