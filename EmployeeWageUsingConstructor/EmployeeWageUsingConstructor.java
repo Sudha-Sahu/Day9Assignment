@@ -10,21 +10,22 @@ public class EmployeeWageUsingConstructor{
 		
 		System.out.println("Welcome to Employee Wage Problem using Constructor!!!!");
 	}
-	EmployeeWageUsingConstructor(int isFullTime) {
+	public int calcEmployeeWage(int empHrs, int empWage) {
 	
-		int empHrs = 0;
-		int empWage = 0;
-		double empCheck = Math.floor (Math.random() * 10) % 2;                   
-		if (empCheck == isFullTime)
+		double empCheck = Math.floor (Math.random() * 10) % 3;
+		if (empCheck == PARTTIME)
+			empHrs=4;
+		else if(empCheck == FULLTIME)        
 			empHrs=8;
-		else            
+		else
 			empHrs=0;
 		empWage= empHrs * EMPRATEPERHR;
 		System.out.println("calculating EmpWage: "+empWage);
+		return 0;
 	}
 	public static void main(String[] args) {
 		
 		EmployeeWageUsingConstructor emp = new EmployeeWageUsingConstructor();
-		emp = new EmployeeWageUsingConstructor(1);
+		emp.calcEmployeeWage(0, 0);
 	}
 }
