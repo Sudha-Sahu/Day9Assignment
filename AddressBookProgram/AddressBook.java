@@ -43,10 +43,19 @@ public class AddressBook{
 		System.out.println("Phone Number :"+phoneNumber);
 		System.out.println("Gmail Address :"+gmail);
 	}
+	public void editContact() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the name of user Contact that you want to change : ");
+		this.firstName= sc.nextLine();
+	}
 	public static void main(String[] args) {
 
 		AddressBook address = new AddressBook();
 		address.getDetails();
+		System.out.println("Contact details before changes....");
+		address.displayAddress();
+		System.out.println("Contact details after changes....");
+		address.editContact();
 		address.displayAddress();
 	}
 }
