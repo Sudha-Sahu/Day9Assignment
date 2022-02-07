@@ -2,9 +2,9 @@ package com.Bridgelabz.Day9Assignment;
 
 public class EmployeeWageUsingConstructor{
 
-	public final int PARTTIME = 1;
-	public final int FULLTIME = 2;
-	public final int EMPRATEPERHR=20;
+	public final int PART_TIME = 1;
+	public final int FULL_TIME = 2;
+	public final int EMP_RATE_PER_HR=20;
 	public final int MAX_NO_Of_WORKING_DAYS = 20;
 	public final int MAX_WORKING_HRS=100;
 
@@ -18,19 +18,15 @@ public class EmployeeWageUsingConstructor{
 		int noOfHrs = 0;
 		while(noOfDays < MAX_NO_Of_WORKING_DAYS && noOfHrs < MAX_WORKING_HRS) {
 			int empCheck = (int) Math.floor (Math.random() * 10) % 3;
-			switch (empCheck) {
-			case 1:
+			if (empCheck == PART_TIME)
 				empHrs=4;
-				break;
-			case 2:
+			else if(empCheck == FULL_TIME)        
 				empHrs=8;
-				break;
-			default:
+			else
 				empHrs=0;
-			}
 			noOfDays++;
 			noOfHrs++;
-			empWage= empHrs * EMPRATEPERHR;
+			empWage= empHrs * EMP_RATE_PER_HR;
 			System.out.println("EmpWage in day : "+noOfDays+" is : "+empWage);
 			empWageforMonth = empWageforMonth+empWage;
 		}
