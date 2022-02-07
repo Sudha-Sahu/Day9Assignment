@@ -5,7 +5,8 @@ public class EmployeeWageUsingConstructor{
 	public final int PARTTIME = 1;
 	public final int FULLTIME = 2;
 	public final int EMPRATEPERHR=20;
-	public final int NO_Of_WORKING_DAYS = 20;	
+	public final int MAX_NO_Of_WORKING_DAYS = 20;
+	public final int MAX_WORKING_HRS=100;
 
 	EmployeeWageUsingConstructor() {
 
@@ -13,8 +14,9 @@ public class EmployeeWageUsingConstructor{
 	}
 	public int calcEmployeeWage(int empHrs, int empWage, int empWageforMonth) {
 
-		int day = 0;
-		while(day < NO_Of_WORKING_DAYS) {
+		int noOfDays = 0;
+		int noOfHrs = 0;
+		while(noOfDays < MAX_NO_Of_WORKING_DAYS && noOfHrs < MAX_WORKING_HRS) {
 			int empCheck = (int) Math.floor (Math.random() * 10) % 3;
 			switch (empCheck) {
 			case 1:
@@ -26,9 +28,10 @@ public class EmployeeWageUsingConstructor{
 			default:
 				empHrs=0;
 			}
-			day++;
+			noOfDays++;
+			noOfHrs++;
 			empWage= empHrs * EMPRATEPERHR;
-			System.out.println("EmpWage in day : "+day+" is : "+empWage);
+			System.out.println("EmpWage in day : "+noOfDays+" is : "+empWage);
 			empWageforMonth = empWageforMonth+empWage;
 		}
 		System.out.println("calculating EmpWage for month: "+ empWageforMonth);
